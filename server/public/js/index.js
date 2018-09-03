@@ -88,188 +88,122 @@ __webpack_require__(2);
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
-
-//数组解构赋值
 {
-	var a = void 0,
-	    b = void 0,
-	    rest = void 0;
-	a = 1;
-	b = 2;
+	var arr = Array.of(3, 4, 7, 9, 11);
+	console.log('arr=', arr); // [3, 4, 7, 9, 11]
 
-	console.log(a, b); //1 2
+	var empty = Array.of();
+	console.log('empty=', empty); // []
 }
 
 {
-	var _a = void 0,
-	    _b = void 0,
-	    _rest = void 0;
-	_a = 1;
-	_b = 2;
-	_rest = [3, 4, 5, 6];
+	var p = document.querySelectorAll('p');
+	var pArr = Array.from(p);
+	pArr.forEach(function (item) {
+		console.log(item.textContent);
+	});
+	console.log(Array.from([1, 3, 5], function (item) {
+		return item * 2;
+	}));
+}
 
-	console.log(_a, _b, _rest); //1 2 [3, 4, 5, 6]
+//数组中所有值替换成一个值
+{
+	console.log('fill-7', [1, 'a', undefined].fill(7));
+	console.log('fill,pos', ['a', 'b', 'c'].fill(7, 1, 3)); //7表示要替换的值，1,3表示起始和结束位置
 }
 
 {
-	var _a2 = void 0,
-	    _b2 = void 0,
-	    c = void 0,
-	    _rest2 = void 0;
-	var _ref = [1, 2];
-	_a2 = _ref[0];
-	_b2 = _ref[1];
-	var _ref$ = _ref[2];
-	c = _ref$ === undefined ? 3 : _ref$;
+	var _iteratorNormalCompletion = true;
+	var _didIteratorError = false;
+	var _iteratorError = undefined;
 
-	console.log(_a2, _b2, c); //1 2 3
+	try {
+		for (var _iterator = ['1', 'c', 'ks'].keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+			var index = _step.value;
+
+			console.log('keys', index); //0,1,2
+		}
+	} catch (err) {
+		_didIteratorError = true;
+		_iteratorError = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion && _iterator.return) {
+				_iterator.return();
+			}
+		} finally {
+			if (_didIteratorError) {
+				throw _iteratorError;
+			}
+		}
+	}
+
+	var _iteratorNormalCompletion2 = true;
+	var _didIteratorError2 = false;
+	var _iteratorError2 = undefined;
+
+	try {
+		for (var _iterator2 = ['1', 'c', 'ks'].values()[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+			var value = _step2.value;
+
+			console.log('value', value); //1,c,ks
+		}
+	} catch (err) {
+		_didIteratorError2 = true;
+		_iteratorError2 = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion2 && _iterator2.return) {
+				_iterator2.return();
+			}
+		} finally {
+			if (_didIteratorError2) {
+				throw _iteratorError2;
+			}
+		}
+	}
+
+	var _iteratorNormalCompletion3 = true;
+	var _didIteratorError3 = false;
+	var _iteratorError3 = undefined;
+
+	try {
+		for (var _iterator3 = ['1', 'c', 'ks'].entries()[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+			var _step3$value = _slicedToArray(_step3.value, 2),
+			    _index = _step3$value[0],
+			    _value = _step3$value[1];
+
+			console.log('index-value', '' + (_index + '-' + _value)); //0-1,2-c,3-ks
+		}
+	} catch (err) {
+		_didIteratorError3 = true;
+		_iteratorError3 = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion3 && _iterator3.return) {
+				_iterator3.return();
+			}
+		} finally {
+			if (_didIteratorError3) {
+				throw _iteratorError3;
+			}
+		}
+	}
 }
 
 {
-	var _a3 = void 0,
-	    _b3 = void 0,
-	    _c = void 0,
-	    _rest3 = void 0;
-	var _ref2 = [1, 2];
-	_a3 = _ref2[0];
-	_b3 = _ref2[1];
-	_c = _ref2[2];
-
-	console.log(_a3, _b3, _c); //1 2 undefined
+	//从哪个位置开始替换 从哪个位置开始读取 从哪个位置截止
+	console.log([1, 2, 3, 4, 5].copyWithin(0, 3, 4)); // [4,2,3,4,5]
 }
 
-//对象解构赋值
+//查找
 {
-	var _a4 = void 0,
-	    _b4 = void 0;
-	var _a$b = { a: 1, b: 2 };
-	_a4 = _a$b.a;
-	_b4 = _a$b.b;
-
-	console.log(_a4, _b4); //1 2
-}
-
-{
-	var _a5 = void 0,
-	    _b5 = void 0,
-	    _c2 = void 0,
-	    _rest4 = void 0;
-	var _a$b2 = { a: 1, b: 2 };
-	_a5 = _a$b2.a;
-	_b5 = _a$b2.b;
-	var _a$b2$c = _a$b2.c;
-	_c2 = _a$b2$c === undefined ? 3 : _a$b2$c;
-
-	console.log(_a5, _b5, _c2); //1 2 3
-}
-
-{
-	var o = { e: 22, f: true };
-	var e = o.e,
-	    f = o.f;
-
-	console.log(e, f); //22 true
-}
-
-{
-	var _a7 = { a: 3 },
-	    _a7$a = _a7.a,
-	    _a6 = _a7$a === undefined ? 10 : _a7$a,
-	    _a7$b = _a7.b,
-	    _b6 = _a7$b === undefined ? 5 : _a7$b;
-
-	console.log(_a6, _b6); //3 5
-}
-
-{
-	var metaData = {
-		title: 'abc',
-		test: [{
-			title: 'test',
-			desc: 'description'
-		}]
-	};
-
-	var esTitle = metaData.title,
-	    _metaData$test = _slicedToArray(metaData.test, 1),
-	    cnTitle = _metaData$test[0].title;
-
-	console.log(esTitle, cnTitle);
-}
-
-/**
- *使用场景
- */
-
-//交换变量
-{
-	var _a8 = 1;
-	var _b7 = 2;
-	var _ref3 = [_b7, _a8];
-	_a8 = _ref3[0];
-	_b7 = _ref3[1];
-
-	console.log(_a8, _b7); //2 1
-}
-
-//取函数运行结果
-{
-	var _f = function _f() {
-		return [1, 2];
-	};
-
-	var _a9 = void 0,
-	    _b8 = void 0;
-
-	var _f2 = _f();
-
-	var _f3 = _slicedToArray(_f2, 2);
-
-	_a9 = _f3[0];
-	_b8 = _f3[1];
-
-	console.log(_a9, _b8); //1 2
-}
-
-//函数返回多个值，选择性接收某几个变量
-{
-	var _f4 = function _f4() {
-		return [1, 2, 3, 4, 5];
-	};
-
-	var _a10 = void 0,
-	    _b9 = void 0,
-	    _c3 = void 0;
-
-	var _f5 = _f4();
-
-	var _f6 = _slicedToArray(_f5, 4);
-
-	_a10 = _f6[0];
-	_b9 = _f6[3];
-
-	console.log(_a10, _b9); //1 4
-}
-
-//不确定返回数组长度，只关心第一个
-{
-	var _f7 = function _f7() {
-		return [1, 2, 3, 4, 5];
-	};
-
-	var _a11 = void 0,
-	    _b10 = void 0,
-	    _c4 = void 0;
-
-	var _f8 = _f7();
-
-	var _f9 = _toArray(_f8);
-
-	_a11 = _f9[0];
-	_b10 = _f9.slice(1);
-
-	console.log(_a11, _b10); //1 [2, 3, 4, 5]
+	var _arr = [1, 2, 3, 4, 5, 6, 'a', { title: 1 }];
+	var curArr = _arr.find(function (item) {
+		return item > 3;
+	});
+	console.log(curArr); //4 只找出第一个就不找了，所以只有4
 }
 
 /***/ })

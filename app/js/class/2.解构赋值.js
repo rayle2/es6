@@ -51,12 +51,12 @@
 	let metaData = {
 		title: 'abc',
 		test: [{
-			title: 'test',
-			desc: 'description'
+			title: '测试标题',
+			desc: '测试描述'
 		}]
 	}
 	let {title: esTitle, test: [{title: cnTitle}]} = metaData;
-	console.log(esTitle, cnTitle)
+	console.log(esTitle, cnTitle) //abc 测试标题
 }
 
 /**
@@ -102,5 +102,15 @@
 	let a, b, c;
 	[a, ...b] = f()
 	console.log(a, b,); //1 [2, 3, 4, 5]
+}
+
+{
+	function f() {
+		return [1, 2, 3, 4, 5];
+	}
+	
+	let a, b, c;
+	[a, , ...b] = f()
+	console.log(a, b,); //1 [3, 4, 5]
 }
 

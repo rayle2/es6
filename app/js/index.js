@@ -1,2 +1,3 @@
 // import './class/1.let&const'
-import './class/2.解构赋值'
+// import 'babel-polyfill';
+import './class/6.数组扩展';
