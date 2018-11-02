@@ -43,8 +43,19 @@
 //查找
 {
 	let arr = [1, 2, 3, 4, 5, 6, 'a', {title: 1}];
-	var curArr = arr.find(item => {
+	let curArr = arr.find(item => {
 		return item > 3;
 	});
 	console.log(curArr); //4 只找出第一个就不找了，所以只有4
+	let curIndex = arr.findIndex(item => {
+		return item > 3; //3 只找出第一个就不找了
+	});
+	console.log(curIndex);
+}
+
+//是否包含
+{
+	let arr = [1, 2, NaN];
+	let flag = arr.includes(NaN);
+	console.log(flag);
 }
