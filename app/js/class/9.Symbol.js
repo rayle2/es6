@@ -14,6 +14,7 @@
 	let obj = {
 		[a1]: '123',
 		'abc': 345,
+		
 		'c': 456
 	};
 	console.log('obj', obj);
