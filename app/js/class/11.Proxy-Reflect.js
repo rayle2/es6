@@ -17,6 +17,7 @@
 				return target[key] = value;
 			} else {
 				return target[key];
+				
 			}
 		}
 	});
