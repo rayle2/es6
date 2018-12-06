@@ -25,4 +25,4 @@
 	
 	Reflect.ownKeys(obj).forEach(item => console.log('ownkeys', item, obj[item]));  //abc 345i    c 456    Symbol(abc) 123
 }
-//更改
+//更改 12.6
